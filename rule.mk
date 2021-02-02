@@ -88,22 +88,22 @@ $(OUTPUT_PREFIX)%.z.o: %.z
 
 $(OUTPUT_PREFIX)%.s.o: %.s
 	@echo + AS $<
-	@$(CC) $(CC_ARGS) $(CC_DEFINE) -MM -MT "$@" $(SYS_INCLUDES) $(includes) $< > $(@:.o=.d);
+	@$(CC) $(CC_ARGS) $(CC_DEFINE) -MM -MT "$@" $(SYS_INCLUDES) $(includes) $< > $(@:.o=.d)
 	$(V) $(CC) $(SYS_INCLUDES)  $(includes) -D__ASSEMBLY__ $(CC_ARGS) $(CC_DEFINE) -c $< -o $@
 
 $(OUTPUT_PREFIX)%.S.o: %.S
 	@echo + AS $<
-	@$(CC) $(CC_ARGS) $(CC_DEFINE) -MM -MT "$@" $(SYS_INCLUDES) $(includes) $< > $(@:.o=.d);
+	@$(CC) $(CC_ARGS) $(CC_DEFINE) -MM -MT "$@" $(SYS_INCLUDES) $(includes) $< > $(@:.o=.d)
 	$(V) $(CC) $(SYS_INCLUDES)  $(includes) -D__ASSEMBLY__ $(CC_ARGS) $(CC_DEFINE) -c $< -o $@
 
 $(OUTPUT_PREFIX)%.c.o: %.c
 	@echo + CC $<
-	@$(CC) $(CC_ARGS) $(CC_DEFINE) -MM -MT "$@" $(SYS_INCLUDES) $(includes) $< > $(@:.o=.d);
+	@$(CC) $(CC_ARGS) $(CC_DEFINE) -MM -MT "$@" $(SYS_INCLUDES) $(includes) $< > $(@:.o=.d)
 	$(V) $(_CC) $(SYS_INCLUDES)  $(includes) $(CC_ARGS) $(CC_DEFINE) -c $< -o $@
 
 $(OUTPUT_PREFIX)%.cpp.o: %.cpp
 	@echo + CXX $<
-	@$(CC) $(CC_ARGS) $(CC_DEFINE) -MM -MT "$@" $(SYS_INCLUDES) $(includes) $< > $(@:.o=.d);
+	@$(CC) $(CC_ARGS) $(CC_DEFINE) -MM -MT "$@" $(SYS_INCLUDES) $(includes) $< > $(@:.o=.d)
 	$(V) $(_CC) $(SYS_INCLUDES)  $(includes) $(CC_ARGS) $(CC_DEFINE) -c $< -o $@
 
 

@@ -67,7 +67,11 @@ export ROOT=$(abspath .)
 ifeq ($(cibuild),y)
 export OUTPUT_PREFIX=
 else
+ifeq ($(HOST_OS), windows)
+export OUTPUT_PREFIX=
+else
 export OUTPUT_PREFIX=${HOME}/tmp
+endif
 endif
 
 export MAKE_RULE = $(ROOT)/rule.mk
